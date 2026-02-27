@@ -7,7 +7,7 @@ import { Upload, Image as ImageIcon, Wand2, Loader2, Download, X, RefreshCw } fr
 import Image from 'next/image';
 
 // Initialize Gemini API
-const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY || '' });
+// const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY || '' });
 
 export default function ImageEditor() {
   const [image, setImage] = useState<string | null>(null);
@@ -63,6 +63,12 @@ export default function ImageEditor() {
     setError(null);
 
     try {
+      const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('Gemini API key is not configured. Please check your settings.');
+      }
+      const ai = new GoogleGenAI({ apiKey });
+
       // Extract base64 data without the prefix
       const base64Data = image.split(',')[1];
 
