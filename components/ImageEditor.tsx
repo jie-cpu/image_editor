@@ -7,7 +7,6 @@ import { Upload, Image as ImageIcon, Wand2, Loader2, Download, X, RefreshCw } fr
 import Image from 'next/image';
 
 // Initialize Gemini API
-// const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY || '' });
 
 export default function ImageEditor() {
   const [image, setImage] = useState<string | null>(null);
