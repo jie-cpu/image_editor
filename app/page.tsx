@@ -1,5 +1,5 @@
-import ImageEditor from '@/components/ImageEditor';
 import { Sparkles } from 'lucide-react';
+import ClientImageEditor from '@/components/ClientImageEditor';
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
 
         {/* Editor Component */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <ImageEditor />
+          <ClientImageEditor />
         </div>
 
         {/* Footer */}
